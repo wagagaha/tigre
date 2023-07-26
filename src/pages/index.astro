@@ -1,4 +1,5 @@
 ---
+import Navigation from '@components/Navigation.astro'
 ---
 
 <html lang="en">
@@ -7,9 +8,14 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>wagagaha</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-black text-white">
+		<header class="w-full h-16">
+			<Navigation />
+		</header>
+		<div class="h-96 flex justify-center text-4xl tracking-[2em] items-center">
+			WIP
+		</div>
 	</body>
 </html>
