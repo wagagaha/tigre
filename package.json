@@ -13,6 +13,11 @@
     "@astrojs/tailwind": "^4.0.0",
     "@astrojs/vercel": "^3.7.4",
     "astro": "^2.9.2",
+    "astro-compress": "^1.1.50",
     "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@vite-pwa/astro": "^0.1.1",
+    "workbox-window": "^7.0.0"
   }
 }
