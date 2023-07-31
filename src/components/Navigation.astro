@@ -1,11 +1,25 @@
 ---
+import IconIconamoonHomeThin from '~icons/iconamoon/home-thin'
+import IconIconamoonNewsThin from '~icons/iconamoon/news-thin'
+import IconIconamoonBoxThin from '~icons/iconamoon/box-thin'
+
 ---
-<div class="flex w-full h-full items-center justify-between px-12 font-thin">
+
+<div class="w-full h-full max-w-7xl mx-auto flex items-center justify-between px-12 max-sm:px-4 font-thin">
   <div>wagagaha</div>
-  <div class="flex flex-auto max-sm:hidden gap-8 justify-center tracking-[.4em] indent-[.4em]">
-    <a href="#"class="">首页</a>
-    <a href="#"class="">博客</a>
-    <a href="#"class="">简介</a>
+  <div class="flex flex-auto gap-8 justify-center tracking-[.4em] indent-[.4em] whitespace-nowrap">
+    <div class="flex items-center">
+      <IconIconamoonHomeThin />
+      <a href="#" class="max-sm:hidden">首页</a>
+    </div>
+    <div class="flex items-center">
+      <IconIconamoonNewsThin />
+      <a href="#" class="max-sm:hidden">博客</a>
+    </div>
+    <div class="flex items-center">
+      <IconIconamoonBoxThin />
+      <a href="#" class="max-sm:hidden">项目</a>
+    </div>
   </div>
-  <div>find me</div>
+  <div>联系</div>
 </div>

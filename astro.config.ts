@@ -3,9 +3,19 @@ import tailwind from '@astrojs/tailwind'
 import AstroPWA from '@vite-pwa/astro'
 import vercel from '@astrojs/vercel/serverless'
 import compress from 'astro-compress'
+import Icons from 'unplugin-icons/vite'
+
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    plugins: [
+      Icons({
+        compiler: 'astro',
+        autoInstall: true,
+      })
+    ]
+  },
   integrations: [
     tailwind(), 
     AstroPWA({

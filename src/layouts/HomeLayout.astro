@@ -25,11 +25,11 @@ const { title } = Astro.props as Props;
     { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
     <script src="/src/pwa.ts"></script>
 	</head>
-	<body class="bg-black text-white">
-		<header class="w-full h-16 border-b">
+	<body>
+		<header class="w-full h-16">
 			<Navigation />
 		</header>
-    <main>
+    <main class="max-w-7xl mx-auto px-12">
       <slot />
     </main>
 		<div class="h-96 flex justify-center text-4xl tracking-[2em] items-center">
