@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon'
+
+---
+
+<div class="w-full h-full max-w-7xl mx-auto flex items-center justify-between px-12 max-sm:px-6 font-thin">
+  <div>
+    <Icon name="logo" class="w-8 h-8 rounded-full" />
+  </div>
+  <div class="flex flex-auto gap-8 justify-center tracking-[.4em] whitespace-nowrap max-sm:hidden">
+    <div class="flex items-center gap-1">
+      <Icon pack="iconoir" name="home-simple-door" class="w-4 h-4" />
+      <a href="#">首页</a>
+    </div>
+    <div class="flex items-center gap-1">
+      <Icon pack="iconoir" name="notes" class="w-4 h-4" />
+      <a href="#">博客</a>
+    </div>
+    <div class="flex items-center gap-1">
+      <Icon pack="iconoir" name="box" class="w-4 h-4" />
+      <a href="#" >项目</a>
+    </div>
+  </div>
+  <div>联系</div>
+</div>

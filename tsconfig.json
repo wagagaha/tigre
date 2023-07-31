@@ -8,7 +8,6 @@
     },
     "types": [
       "@vite-pwa/astro",
-      "unplugin-icons/types/astro",
     ],
   }
 }

@@ -1,5 +1,6 @@
 ---
-import Navigation from '@components/Navigation.astro'
+import Header from '@components/Header.astro'
+import Navigation from '@components/Navigation.astro';
 import { pwaInfo } from 'virtual:pwa-info';
 
 export interface Props {
@@ -27,13 +28,13 @@ const { title } = Astro.props as Props;
 	</head>
 	<body>
 		<header class="w-full h-16">
-			<Navigation />
+			<Header />
 		</header>
     <main class="max-w-7xl mx-auto px-12">
       <slot />
     </main>
-		<div class="h-96 flex justify-center text-4xl tracking-[2em] items-center">
-			WIP
-		</div>
+		<footer>
+			<Navigation />
+		</footer>
 	</body>
 </html>

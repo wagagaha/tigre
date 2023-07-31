@@ -1,25 +1,11 @@
 ---
-import IconIconamoonHomeThin from '~icons/iconamoon/home-thin'
-import IconIconamoonNewsThin from '~icons/iconamoon/news-thin'
-import IconIconamoonBoxThin from '~icons/iconamoon/box-thin'
+import { Icon } from 'astro-icon'
 
 ---
-
-<div class="w-full h-full max-w-7xl mx-auto flex items-center justify-between px-12 max-sm:px-4 font-thin">
-  <div>wagagaha</div>
-  <div class="flex flex-auto gap-8 justify-center tracking-[.4em] indent-[.4em] whitespace-nowrap">
-    <div class="flex items-center">
-      <IconIconamoonHomeThin />
-      <a href="#" class="max-sm:hidden">首页</a>
-    </div>
-    <div class="flex items-center">
-      <IconIconamoonNewsThin />
-      <a href="#" class="max-sm:hidden">博客</a>
-    </div>
-    <div class="flex items-center">
-      <IconIconamoonBoxThin />
-      <a href="#" class="max-sm:hidden">项目</a>
-    </div>
-  </div>
-  <div>联系</div>
+<div class="absolute bottom-0 w-full px-12 sm:hidden">
+  <div class="flex items-center justify-between py-6">
+  <Icon pack="iconoir" name="notes" class="w-6 h-6" />
+  <Icon pack="iconoir" name="home-simple-door" class="w-6 h-6" />
+  <Icon pack="iconoir" name="box" class="w-6 h-6" />
+</div>
 </div>
