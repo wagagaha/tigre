@@ -9,7 +9,7 @@ import compress from 'astro-compress'
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    tailwind(), 
+    tailwind(),
     AstroPWA({
       mode: 'development',
       base: '/',
@@ -19,7 +19,7 @@ export default defineConfig({
       manifest: {
         name: 'wagagaha',
         short_name: 'wagagaha',
-        start_url:'/',
+        start_url: '/',
         theme_color: '#ffffff',
         icons: [
           {
@@ -48,11 +48,16 @@ export default defineConfig({
         enabled: true,
         navigateFallbackAllowlist: [/^\/404$/],
       },
-    }), 
+    }),
     compress()
   ],
   output: 'server',
   adapter: vercel({
-    analytics: true
+    webAnalytics: {
+      enabled: true,
+    },
+    speedInsights: {
+      enabled: true,
+    },
   })
 })
