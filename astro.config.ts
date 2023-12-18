@@ -2,8 +2,6 @@ import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import AstroPWA from '@vite-pwa/astro'
 import vercel from '@astrojs/vercel/serverless'
-import compress from 'astro-compress'
-
 
 
 // https://astro.build/config
@@ -49,7 +47,6 @@ export default defineConfig({
         navigateFallbackAllowlist: [/^\/404$/],
       },
     }),
-    compress()
   ],
   output: 'server',
   adapter: vercel({
