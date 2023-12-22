@@ -11,12 +11,14 @@ export const ui: any = {
     'nav.home': 'HOME',
     'nav.about': 'ABOUT',
     'nav.blog': 'BLOG',
-    'nav.project': 'PROJECT'
+    'nav.project': 'PROJECT',
+    'nav.photo': 'PHOTO',
   },
   zh: {
     'nav.home': '首页',
     'nav.about': '关于',
     'nav.blog': '博客',
-    'nav.project': '项目'
+    'nav.project': '项目',
+    'nav.photo': '摄影',
   },
 } as const;
