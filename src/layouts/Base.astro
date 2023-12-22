@@ -1,5 +1,5 @@
 ---
-import Header from "@components/Nav.astro";
+import Nav from "@components/Nav.astro";
 import { pwaInfo } from "virtual:pwa-info";
 import { getLangFromUrl } from "@i18n/utils";
 import LanguagePicker from "@components/LanguagePicker.astro";
@@ -23,20 +23,40 @@ const { title } = Astro.props as Props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/pwa-192x192.png" />
     <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>wagagaha</title>
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <script src="/src/pwa.ts"></script>
   </head>
-  <body>
-    <header class="w-full h-16">
-      <Header />
-    </header>
-    <main class="max-w-7xl mx-auto px-12">
-      <slot />
-    </main>
-    <footer>
-      <LanguagePicker />
-    </footer>
+  <body class="bg-[#dedede]">
+    <div class="max-w-6xl mx-auto w-full">
+      <header class="py-4">
+        <Nav />
+      </header>
+      <main class="">
+        <slot />
+      </main>
+      <footer>
+        <LanguagePicker />
+      </footer>
+    </div>
   </body>
 </html>
+
+<style>
+  * {
+    font-family: "Josefin Sans", sans-serif;
+  }
+</style>
