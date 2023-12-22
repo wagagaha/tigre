@@ -8,10 +8,10 @@ export const showDefaultLang = false;
 
 export const ui: any = {
   en: {
-    'nav.home': 'Home',
-    'nav.about': 'About',
-    'nav.blog': 'Blog',
-    'nav.project': 'Project'
+    'nav.home': 'HOME',
+    'nav.about': 'ABOUT',
+    'nav.blog': 'BLOG',
+    'nav.project': 'PROJECT'
   },
   zh: {
     'nav.home': '首页',

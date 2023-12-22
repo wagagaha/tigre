@@ -17,7 +17,8 @@
     "@astrojs/vercel": "^6.1.0",
     "astro": "^4.0.6",
     "astro-compress": "^2.2.5",
-    "tailwindcss": "^3.3.6"
+    "tailwindcss": "^3.3.6",
+    "update": "^0.7.4"
   },
   "devDependencies": {
     "@vite-pwa/astro": "^0.1.6",
