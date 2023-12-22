@@ -1,0 +1,42 @@
+---
+import Header from "@components/Nav.astro";
+import { pwaInfo } from "virtual:pwa-info";
+import { getLangFromUrl } from "@i18n/utils";
+import LanguagePicker from "@components/LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url) as string;
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content={title} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/pwa-192x192.png" />
+    <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF" />
+    <meta name="generator" content={Astro.generator} />
+    <title>wagagaha</title>
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+    <script src="/src/pwa.ts"></script>
+  </head>
+  <body>
+    <header class="w-full h-16">
+      <Header />
+    </header>
+    <main class="max-w-7xl mx-auto px-12">
+      <slot />
+    </main>
+    <footer>
+      <LanguagePicker />
+    </footer>
+  </body>
+</html>
