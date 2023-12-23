@@ -5,6 +5,7 @@ import { getLangFromUrl } from "@i18n/utils";
 import LanguagePicker from "@components/LanguagePicker.astro";
 
 const lang = getLangFromUrl(Astro.url) as string;
+export const prerender = true;
 ---
 
 <html lang={lang}>
