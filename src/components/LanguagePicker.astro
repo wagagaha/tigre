@@ -2,12 +2,10 @@
 import { languages } from "@i18n/ui";
 ---
 
-<ul>
+<div class="outline px-2 items-center justify-center gap-4">
   {
     Object.entries(languages).map(([lang, label]) => (
-      <li>
-        <a href={`/${lang}/`}>{label}</a>
-      </li>
+      <span class="">{label}</span>
     ))
   }
-</ul>
+</div>

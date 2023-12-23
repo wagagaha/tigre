@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import PostLayout from "@layouts/Post.astro";
+import Base from "@layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("posts");
+
+  const paths = entries.map((entry) => {
+    const [lang, ...slug] = entry.slug.split("/");
+    console.log("lang", lang);
+
+    return {
+      params: { lang, slug: slug.join("/") || undefined },
+      props: entry,
+    };
+  });
+  console.log(paths);
+
+  return paths;
+}
+
+export const prerender = true;
+const { lang, slug } = Astro.params;
+const entry = Astro.props;
+const formattedDate = entry.data.created.toLocaleString(lang);
+
+const { Content } = await entry.render();
+---
+
+<Base>
+  <PostLayout frontmatter={entry.data}>
+    <Content />
+  </PostLayout>
+</Base>

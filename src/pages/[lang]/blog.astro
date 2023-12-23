@@ -1,0 +1,21 @@
+---
+import Base from "@layouts/Base.astro";
+import { getCollection } from "astro:content";
+import BlogPost from "@components/Blog/Post.astro";
+import { getLangFromUrl } from "@i18n/utils";
+
+const pageTitle = "博客";
+const allPosts = await getCollection("posts");
+---
+
+<Base title="Welcome to wagagaha's personal blog">
+  <div class="h-96 flex justify-center text-4xl items-center">
+    <ul>
+      {
+        allPosts.map((post) => (
+          <BlogPost url={`/posts/${post.slug}`} title={post.data.title} />
+        ))
+      }
+    </ul>
+  </div>
+</Base>
