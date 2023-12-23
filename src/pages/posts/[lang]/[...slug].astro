@@ -8,14 +8,11 @@ export async function getStaticPaths() {
 
   const paths = entries.map((entry) => {
     const [lang, ...slug] = entry.slug.split("/");
-    console.log("lang", lang);
-
     return {
       params: { lang, slug: slug.join("/") || undefined },
       props: entry,
     };
   });
-  console.log(paths);
 
   return paths;
 }
