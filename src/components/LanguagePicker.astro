@@ -2,10 +2,14 @@
 import { languages } from "@i18n/ui";
 ---
 
-<div class="outline px-2 items-center justify-center gap-4">
+<div
+  class="flex outline items-center justify-center p-0.5 rounded-2xl text-white"
+>
   {
     Object.entries(languages).map(([lang, label]) => (
-      <span class="">{label}</span>
+      <span class="first:bg-[#eb4c38] px-2 first:rounded-l-xl last:rounded-r-xl">
+        {label}
+      </span>
     ))
   }
 </div>
