@@ -1,21 +1,24 @@
 ---
-import Base from "@layouts/Base.astro";
+import BaseLayout from "@layouts/Base.astro";
 import { getCollection } from "astro:content";
-import BlogPost from "@components/Blog/Post.astro";
+import BlogPostCard from "@components/blog/PostCard.astro";
 import { getLangFromUrl } from "@i18n/utils";
 
 const pageTitle = "博客";
 const allPosts = await getCollection("posts");
 ---
 
-<Base title="Welcome to wagagaha's personal blog">
-  <div class="h-96 flex justify-center text-4xl items-center">
-    <ul>
+<BaseLayout>
+  <div class="flex flex-col h-full">
+    <div class="flex-auto grid grid-cols-3 w-full gap-8">
       {
         allPosts.map((post) => (
-          <BlogPost url={`/posts/${post.slug}`} title={post.data.title} />
+          <div class="bg-white rounded h-64 p-4">
+            <BlogPostCard url={`/posts/${post.slug}`} title={post.data.title} />
+          </div>
         ))
       }
-    </ul>
+    </div>
+    <div class="flex-none">翻页</div>
   </div>
-</Base>
+</BaseLayout>
