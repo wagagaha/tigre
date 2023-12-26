@@ -5,18 +5,9 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
+      "@*": [
+        "src/*"
       ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@i18n/*": [
-        "src/i18n/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ]
     },
     "types": [
       "@vite-pwa/astro",
