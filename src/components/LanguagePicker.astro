@@ -7,9 +7,12 @@ import { languages } from "@i18n/ui";
 >
   {
     Object.entries(languages).map(([lang, label]) => (
-      <span class="first:bg-[#eb4c38] px-2 first:rounded-l-xl last:rounded-r-xl">
+      <a
+        href={`/${lang}`}
+        class="first:bg-[#eb4c38] px-2 first:rounded-l-xl last:rounded-r-xl"
+      >
         {label}
-      </span>
+      </a>
     ))
   }
 </div>

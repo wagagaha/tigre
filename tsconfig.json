@@ -6,20 +6,20 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "./src/components/*"
+        "src/components/*"
       ],
       "@layouts/*": [
-        "./src/layouts/*"
+        "src/layouts/*"
       ],
       "@i18n/*": [
-        "./src/i18n/*"
+        "src/i18n/*"
       ],
       "@assets/*": [
-        "./src/assets/*"
+        "src/assets/*"
       ]
     },
     "types": [
-      "@vite-pwa/astro"
+      "@vite-pwa/astro",
     ]
   }
 }

@@ -30,8 +30,8 @@ const lang = getLangFromUrl(Astro.url) as string;
     />
     <meta name="generator" content={Astro.generator} />
     <title>wagagaha</title>
-    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <script src="/src/pwa.ts"></script>
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
   <body class="bg-[#dedede] flex flex-col min-h-screen border-gray-300">
     <header class="flex-none border-inherit border-b">

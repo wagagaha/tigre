@@ -1,5 +1,6 @@
 import { ui, defaultLang } from './ui';
 
+
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split('/');
   if (lang in ui) 
@@ -12,3 +13,4 @@ export function useTranslations(lang: keyof typeof ui) {
     return ui[lang][key] || ui[defaultLang][key];
   }
 }
+
