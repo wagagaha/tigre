@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@layouts/Base.astro";
-import BlogPostCard from "@components/blog/Post.astro";
 import { getCollection } from "astro:content";
 import { getLangFromUrl } from "@i18n/utils";
 
@@ -11,13 +10,7 @@ const allPosts = await getCollection("posts");
 <BaseLayout>
   <div class="flex flex-col h-full">
     <div class="flex-auto grid grid-cols-3 w-full gap-8">
-      {
-        allPosts.map((post) => (
-          <div class="bg-white rounded h-64 p-4">
-            <BlogPostCard url={`/posts/${post.slug}`} title={post.data.title} />
-          </div>
-        ))
-      }
+      {allPosts.map((post) => <div class="bg-white rounded h-64 p-4"></div>)}
     </div>
     <div class="flex-none">翻页</div>
   </div>
