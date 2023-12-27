@@ -1,7 +1,13 @@
 ---
 import Base from "@layouts/Base.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url) as string;
+const t = useTranslations(lang);
 ---
 
 <Base title="Welcome to wagagaha's personal blog">
-  <div class="h-96 flex justify-center text-4xl items-center">项目</div>
+  <div class="h-96 flex justify-center text-4xl items-center">
+    {t("nav.project")}
+  </div>
 </Base>

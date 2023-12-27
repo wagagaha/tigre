@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import AstroPWA from '@vite-pwa/astro'
 import vercel from '@astrojs/vercel/serverless'
-import path from 'path'
 
 
 // https://astro.build/config
@@ -58,11 +57,5 @@ export default defineConfig({
       enabled: true,
     },
   }),
-  vite: {
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, './src'),
-      },
-    }
-  }
+ 
 })

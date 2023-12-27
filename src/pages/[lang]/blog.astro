@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/Base.astro";
 import { getCollection } from "astro:content";
 import { getLangFromUrl } from "@i18n/utils";
-import BlogPostCard from "@components/blog/PostCard.astro";
+import BlogPostCard from "@components/PostCard.astro";
 
 const pageTitle = "博客";
 const allPosts = await getCollection("posts");

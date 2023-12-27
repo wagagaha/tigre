@@ -1,15 +1,17 @@
 ---
 import { languages } from "@i18n/ui";
+import { getLangFromUrl } from "@i18n/utils";
+
+const curLang = getLangFromUrl(Astro.url) as string;
 ---
 
-<div
-  class="flex outline items-center justify-center p-0.5 rounded-2xl text-white"
->
+<div class="flex outline items-center justify-center p-0.5 rounded-2xl">
   {
     Object.entries(languages).map(([lang, label]) => (
       <a
         href={`/${lang}`}
-        class="first:bg-[#eb4c38] px-2 first:rounded-l-xl last:rounded-r-xl"
+        class="px-2 first:rounded-l-xl last:rounded-r-xl"
+        class:list={[{ "bg-[#eb4c38] text-white": lang === curLang }]}
       >
         {label}
       </a>

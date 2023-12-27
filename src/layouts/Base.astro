@@ -33,7 +33,7 @@ const lang = getLangFromUrl(Astro.url) as string;
     <script src="/src/pwa.ts"></script>
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
-  <body class="bg-[#dedede] flex flex-col min-h-screen border-gray-300">
+  <body class="bg-primary flex flex-col min-h-screen border-gray-300">
     <header class="flex-none border-inherit border-b">
       <div
         class="max-w-6xl mx-auto border-x border-inherit px-12 max-sm:px-6 py-4"
