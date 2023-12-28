@@ -2,8 +2,7 @@
 const { frontmatter } = Astro.props;
 ---
 
-<div>
-  {frontmatter.title}
+<div class="bg-white h-screen rounded py-8 px-16">
+  <p class="text-3xl font-bold py-8">{frontmatter.title}</p>
+  <slot />
 </div>
-
-<slot />

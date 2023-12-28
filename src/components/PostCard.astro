@@ -2,6 +2,12 @@
 const { title, url } = Astro.props;
 ---
 
-<div>
-  <a href={url}>{title}</a>
-</div>
+<a href={url}>
+  <div class="flex flex-col bg-gray-50 rounded h-64 p-4">
+    <div class="flex-auto"></div>
+    <div class="flex flex-col gap-2 h-24">
+      <p class="flex-auto text-xl">{title}</p>
+      <p class="date text-sm text-gray-500">2023-12-12</p>
+    </div>
+  </div>
+</a>

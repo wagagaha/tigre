@@ -13,12 +13,10 @@ const allPosts = await getCollection("posts");
     <div class="flex-auto grid grid-cols-3 w-full gap-8">
       {
         allPosts.map((post) => (
-          <div class="bg-white rounded h-64 p-4">
-            <BlogPostCard title={post.data.title} url={`/posts/${post.slug}`} />
-          </div>
+          <BlogPostCard title={post.data.title} url={`/posts/${post.slug}`} />
         ))
       }
     </div>
-    <div class="flex-none">翻页</div>
+    <!-- <div class="flex-none">翻页</div> -->
   </div>
 </BaseLayout>
