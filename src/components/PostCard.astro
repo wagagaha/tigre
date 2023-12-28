@@ -1,11 +1,23 @@
 ---
-const { title, url } = Astro.props;
+import { Image } from "astro:assets";
+
+const { title, url, image } = Astro.props;
 ---
 
 <a href={url}>
-  <div class="flex flex-col bg-gray-50 rounded h-64 p-4">
-    <div class="flex-auto"></div>
-    <div class="flex flex-col gap-2 h-24">
+  <div class="flex flex-col bg-gray-50 rounded gap-4 w-fit">
+    <div class="flex-auto">
+      <Image
+        src={image.url}
+        alt={image.alt}
+        width="320"
+        height="180"
+        decoding="async"
+        loading="lazy"
+        class="rounded-t"
+      />
+    </div>
+    <div class="flex flex-col gap-2 h-24 p-4">
       <p class="flex-auto text-xl">{title}</p>
       <p class="date text-sm text-gray-500">2023-12-12</p>
     </div>

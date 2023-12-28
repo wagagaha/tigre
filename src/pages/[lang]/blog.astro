@@ -13,7 +13,11 @@ const allPosts = await getCollection("posts");
     <div class="flex-auto grid grid-cols-3 w-full gap-8">
       {
         allPosts.map((post) => (
-          <BlogPostCard title={post.data.title} url={`/posts/${post.slug}`} />
+          <BlogPostCard
+            title={post.data.title}
+            url={`/posts/${post.slug}`}
+            image={post.data.image}
+          />
         ))
       }
     </div>
