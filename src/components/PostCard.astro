@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 
 const { title, url, image } = Astro.props;
 ---
@@ -7,7 +7,7 @@ const { title, url, image } = Astro.props;
 <a href={url}>
   <div class="flex flex-col bg-gray-50 rounded gap-4 w-fit">
     <div class="flex-auto">
-      <Image
+      <Picture
         src={image.url}
         alt={image.alt}
         width="320"

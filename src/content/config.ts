@@ -12,6 +12,7 @@ const postCollection = defineCollection({
       url: z.string(),
       alt: z.string()
     }),
+    lang: z.string(),
     tags: z.array(z.string())
   })
 });

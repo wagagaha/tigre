@@ -7,9 +7,12 @@ export async function getStaticPaths() {
   const entries = await getCollection("posts");
 
   const paths = entries.map((entry) => {
-    const [lang, ...slug] = entry.slug.split("/");
+    const slug = entry.slug.split("/");
     return {
-      params: { lang, slug: slug.join("/") || undefined },
+      params: {
+        lang: entry.data.lang,
+        slug: slug.join("/") || undefined,
+      },
       props: entry,
     };
   });
@@ -18,9 +21,13 @@ export async function getStaticPaths() {
 }
 
 export const prerender = true;
-const { lang, slug } = Astro.params;
+
 const entry = Astro.props;
-const formattedDate = entry.data.created.toLocaleString(lang);
+const formattedDate = entry.data.created.toLocaleString(entry.data.lang, {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 
 const { Content } = await entry.render();
 ---
