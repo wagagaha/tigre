@@ -1,8 +1,30 @@
 ---
+import { useTranslations } from "@i18n/utils";
 const { frontmatter } = Astro.props;
+const updated = frontmatter.updated.toLocaleString(frontmatter.lang, {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const created = frontmatter.created.toLocaleString(frontmatter.lang, {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const t = useTranslations(frontmatter.lang);
 ---
 
 <div class="bg-white h-screen rounded py-8 px-16">
-  <p class="text-3xl font-bold py-8">{frontmatter.title}</p>
+  <p class="text-xs font-bold text-gray-500 py-4">
+    {t("post.updated")}
+    {updated}
+  </p>
+  <p class="text-3xl font-bold pb-8">{frontmatter.title}</p>
   <slot />
+  <p class="text-xs font-bold py-8 text-gray-500">
+    {t("post.created")}
+    {created}
+  </p>
 </div>

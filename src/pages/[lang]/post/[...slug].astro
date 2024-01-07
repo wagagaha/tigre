@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import PostLayout from "@layouts/Post.astro";
 import Base from "@layouts/Base.astro";
+import Prose from "@components/Prose.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("posts");
@@ -23,17 +24,14 @@ export async function getStaticPaths() {
 export const prerender = true;
 
 const entry = Astro.props;
-const formattedDate = entry.data.created.toLocaleString(entry.data.lang, {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
 
 const { Content } = await entry.render();
 ---
 
 <Base>
   <PostLayout frontmatter={entry.data}>
-    <Content />
+    <Prose>
+      <Content />
+    </Prose>
   </PostLayout>
 </Base>

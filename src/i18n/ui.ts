@@ -13,6 +13,8 @@ export const ui: any = {
     'nav.blog': 'BLOG',
     'nav.project': 'PROJECT',
     'nav.photo': 'PHOTO',
+    'post.updated': 'UPDATED',
+    'post.created': 'CREATED'
   },
   zh: {
     'nav.home': '首页',
@@ -20,5 +22,7 @@ export const ui: any = {
     'nav.blog': '博客',
     'nav.project': '项目',
     'nav.photo': '摄影',
+    'post.updated': '更新于',
+    'post.created': '创建于'
   },
 } as const;

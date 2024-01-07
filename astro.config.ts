@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, squooshImageService } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import AstroPWA from '@vite-pwa/astro'
 import vercel from '@astrojs/vercel/serverless'
@@ -6,13 +6,16 @@ import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    service: squooshImageService(),
+  },
   integrations: [
     tailwind(),
     AstroPWA({
       mode: 'development',
       base: '/',
       scope: '/',
-      includeAssets: ['favicon.svg'],
+      includeAssets: ['favicon.ico'],
       registerType: 'autoUpdate',
       manifest: {
         name: 'wagagaha',
