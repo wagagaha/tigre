@@ -16,7 +16,7 @@ const created = frontmatter.created.toLocaleString(frontmatter.lang, {
 const t = useTranslations(frontmatter.lang);
 ---
 
-<div class="bg-white h-screen rounded py-8 px-16">
+<div class="bg-white min-h-screen rounded py-8 lg:px-16 px-8">
   <p class="text-xs font-bold text-gray-500 py-4">
     {t("post.updated")}
     {updated}

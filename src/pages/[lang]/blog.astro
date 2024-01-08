@@ -14,7 +14,7 @@ const allPosts = await getCollection(
 
 <BaseLayout>
   <div class="flex flex-col h-full">
-    <div class="flex-auto grid grid-cols-3 w-full gap-8">
+    <div class="flex-auto grid auto-cols-max gap-8">
       {
         allPosts.map((post) => (
           <BlogPostCard

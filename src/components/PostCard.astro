@@ -5,7 +5,7 @@ const { title, url, image } = Astro.props;
 ---
 
 <a href={url}>
-  <div class="flex flex-col bg-gray-50 rounded gap-4 w-fit">
+  <div class="flex flex-col bg-gray-50 rounded gap-4 min-w-fit">
     <div class="flex-auto">
       <Picture
         src={image.url}
